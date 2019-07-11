@@ -1,7 +1,8 @@
 # Semver Resource
 
 A resource for managing a version number. Persists the version number in one of several backing stores.
-
+Modified version that supports normal AWS IAM credential chain (and thus instance roles).
+`gbvanrenswoude/semver-resource`
 
 ## Source Configuration
 
@@ -50,10 +51,10 @@ The `s3` driver works by modifying a file in an S3 compatible bucket.
 * `key`: *Required.* The key to use for the object in the bucket tracking
 the version.
 
-* `access_key_id`: *Required.* The AWS access key to use when accessing the
+* `access_key_id`: *Optional.* The AWS access key to use when accessing the
 bucket.
 
-* `secret_access_key`: *Required.* The AWS secret key to use when accessing
+* `secret_access_key`: *Optional.* The AWS secret key to use when accessing
 the bucket.
 
 * `region_name`: *Optional. Default `us-east-1`.* The region the bucket is in.
@@ -217,7 +218,7 @@ be one of:
   type, (e.g. `alpha` vs. `beta`), the type is switched and the prerelease
   version is reset to `1`. If the version is *not* already a pre-release, then
   `pre` is added, starting at `1`.
-  
+
   The value of `pre` can be anything you like; the value will be `pre`-pended (_hah_) to a numeric value. For example, `pre: build` will result in a semver of `x.y.z-build.<number>`, `pre: alpha` becomes `x.y.z-alpha.<number>`, and `pre: my-preferred-naming-convention` becomes `x.y.z-my-preferred-naming-convention.<number>`
 
 ### Running the tests

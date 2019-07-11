@@ -27,8 +27,5 @@ WORKDIR /go-tests
 RUN set -e; for test in /go-tests/*.test; do \
 		$test; \
 	done
-COPY test/ /opt/resource-tests
-RUN /opt/resource-tests/all.sh
-
 
 FROM resource
