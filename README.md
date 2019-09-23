@@ -2,8 +2,10 @@
 
 A resource for managing a version number. Persists the version number in one of several backing stores.
 Modified version that supports normal AWS IAM credential chain (and thus instance roles).  
-`docker pull gbvanrenswoude/semver-resource`
+`docker pull gbvanrenswoude/semver-resource`  
 
+Versions available:   
+`gbvanrenswoude/semver-resource:1`
 ## Source Configuration
 
 * `initial_version`: *Optional.* The version number to use when
